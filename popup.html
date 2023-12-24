@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ad Detector</title>
+  <script src="popup.js"></script>
+</head>
+
+<body style="border: 1px solid #ccc; font-family: avenir; background: #fff">
+  <div style="
+        width: 400px;
+        padding: 16px;
+        border-radius: 8px;
+        color: #000;
+        font-family: avenir;
+        border-radius: 4px;
+      ">
+    <p>HappyYT</p>
+
+    <div style="display: flex; align-items: center; gap: 6px">
+      <p>Speed up for:</p>
+      <div>
+        <input value="ads" type="radio" name="speedFor" id="ads" /><label for="ads">Ads</label>
+      </div>
+      <div>
+        <input value="videos" type="radio" name="speedFor" id="videos" /><label for="videos">Videos</label>
+      </div>
+    </div>
+    <br />
+    <label>Playback speed:</label>
+    <button id="speed-btn" style="border-radius: 4px;
+    padding: 8px;
+    border: 1px solid #000;
+    color: #000;
+    border: 0;
+    cursor: pointer; margin-left: 16px;">16x</button>
+    <br />
+    <br />
+    <button style="
+          border-radius: 4px;
+          padding: 8px 24px;
+          border: 1px solid #000;
+          color: #000;
+          border: 0;
+          cursor: pointer;
+        ">
+      Apply
+    </button>
+  </div>
+</body>
+
+</html>
