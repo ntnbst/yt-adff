@@ -12,8 +12,10 @@ observer.observe(document.body, config)
 function detectAds() {
   // Select the progress bar element
   const progressBar = document.querySelector('.ytp-play-progress')
+
   const hasProgressBarAndisYellow =
     progressBar && window.getComputedStyle(progressBar).backgroundColor === 'rgb(255, 204, 0)'
+
   // Check if the progress bar exists and its color is yellow
   if (hasProgressBarAndisYellow) {
     // Select the video element
@@ -32,9 +34,9 @@ function detectAds() {
   }
 }
 
-// // Run the detection when the page is loaded and when it changes (AJAX navigation)
-// document.addEventListener('DOMContentLoaded', detectAds)
-// document.addEventListener('load', detectAds)
-// window.onload = function () {
-//   detectAds()
-// }
+// Run the detection when the page is loaded and when it changes (AJAX navigation)
+document.addEventListener('DOMContentLoaded', detectAds)
+document.addEventListener('load', detectAds)
+window.onload = function () {
+  detectAds()
+}

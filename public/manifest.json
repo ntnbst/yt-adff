@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "HappyYT",
+  "name": "YT AD FF",
   "version": "1.0",
-  "permissions": ["activeTab", "storage"],
+  "permissions": ["activeTab", "storage", "scripting", "tabs"],
   "action": {
     "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_popup": "index.html"
   },
   "icons": {
     "16": "icon.png",
@@ -16,7 +16,7 @@
   "host_permissions": ["http://*/*", "https://*/*"],
   "content_scripts": [
     {
-      "matches": ["*://www.youtube.com/*"],
+      "matches": ["http://*/*", "https://*/*"],
       "js": ["content.js"]
     }
   ]
