@@ -5,22 +5,24 @@ let observer = new MutationObserver(detectAds)
 // Configuration of the observer
 let config = { childList: true, subtree: true }
 
+const PLAYBACK_SPEED = 16
 // Start observing the target node for configured mutations
 observer.observe(document.body, config)
 
 function detectAds() {
   // Select the progress bar element
   const progressBar = document.querySelector('.ytp-play-progress')
-
+  const hasProgressBarAndisYellow =
+    progressBar && window.getComputedStyle(progressBar).backgroundColor === 'rgb(255, 204, 0)'
   // Check if the progress bar exists and its color is yellow
-  if (progressBar && window.getComputedStyle(progressBar).backgroundColor === 'rgb(255, 204, 0)') {
+  if (hasProgressBarAndisYellow) {
     // Select the video element
     const videoElement = document.querySelector('.video-stream')
-
+    const isVideoPlaying = videoElement && !videoElement.paused && !videoElement.ended
     // Check if the video element exists and is playing
-    if (videoElement && !videoElement.paused && !videoElement.ended) {
+    if (isVideoPlaying) {
       // Set the playback rate to a high value to speed up the ad
-      videoElement.playbackRate = 16
+      videoElement.playbackRate = PLAYBACK_SPEED
       // ytp-ad-skip-button-modern ytp-button
       let skipButton = document.querySelector('.ytp-ad-skip-button-modern')
       if (skipButton) {
